@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.owasp</groupId>
     <artifactId>benchmark</artifactId>
@@ -50,8 +52,10 @@
                             <effort>Max</effort>
                             <threshold>Low</threshold>
                             <failOnError>true</failOnError>
-                            <includeFilterFile>${basedir}/src/main/resources/findbugs-security-include.xml</includeFilterFile>
-                            <excludeFilterFile>${basedir}/src/main/resources/findbugs-security-exclude.xml</excludeFilterFile>
+                            <includeFilterFile>
+                                ${basedir}/src/main/resources/findbugs-security-include.xml</includeFilterFile>
+                            <excludeFilterFile>
+                                ${basedir}/src/main/resources/findbugs-security-exclude.xml</excludeFilterFile>
                             <plugins>
                                 <plugin>
                                     <groupId>com.h3xstream.findsecbugs</groupId>
@@ -81,7 +85,8 @@
                                 <configuration>
                                     <target>
                                         <ant target="run" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -94,8 +99,10 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant target="databaseServer" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                        <ant target="databaseServer"
+                                            antfile="${basedir}/src/config/build.xml">
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -108,8 +115,10 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant target="databaseInit" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                        <ant target="databaseInit"
+                                            antfile="${basedir}/src/config/build.xml">
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -149,13 +158,16 @@
                                 </configfiles>
                                 <home>${project.build.directory}/tomcat${tomcat.major.version}x</home>
                                 <properties>
+                                    <sonar.organization>evilsquirr3l-test-org</sonar.organization>
+                                    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
                                     <cargo.servlet.port>8443</cargo.servlet.port>
                                     <cargo.protocol>https</cargo.protocol>
                                     <cargo.tomcat.connector.protocolClass>HTTP/1.1</cargo.tomcat.connector.protocolClass>
                                     <cargo.tomcat.connector.uriEncoding>ISO-8859-1</cargo.tomcat.connector.uriEncoding>
                                     <cargo.tomcat.connector.clientAuth>false</cargo.tomcat.connector.clientAuth>
                                     <cargo.tomcat.connector.sslProtocol>TLS</cargo.tomcat.connector.sslProtocol>
-                                    <cargo.tomcat.connector.keystoreFile>${project.basedir}/.keystore</cargo.tomcat.connector.keystoreFile>
+                                    <cargo.tomcat.connector.keystoreFile>
+                                        ${project.basedir}/.keystore</cargo.tomcat.connector.keystoreFile>
                                     <cargo.tomcat.connector.keystorePass>changeit</cargo.tomcat.connector.keystorePass>
                                     <cargo.tomcat.connector.keyAlias>tomcat</cargo.tomcat.connector.keyAlias>
                                     <cargo.tomcat.httpSecure>true</cargo.tomcat.httpSecure>
@@ -187,7 +199,8 @@
                                 <configuration>
                                     <target>
                                         <ant target="run" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -200,8 +213,10 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant target="databaseServer" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                        <ant target="databaseServer"
+                                            antfile="${basedir}/src/config/build.xml">
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -214,8 +229,10 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant target="databaseInit" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                        <ant target="databaseInit"
+                                            antfile="${basedir}/src/config/build.xml">
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -267,7 +284,8 @@
                                     <cargo.tomcat.connector.uriEncoding>ISO-8859-1</cargo.tomcat.connector.uriEncoding>
                                     <cargo.tomcat.connector.clientAuth>false</cargo.tomcat.connector.clientAuth>
                                     <cargo.tomcat.connector.sslProtocol>TLS</cargo.tomcat.connector.sslProtocol>
-                                    <cargo.tomcat.connector.keystoreFile>${project.basedir}/.keystore</cargo.tomcat.connector.keystoreFile>
+                                    <cargo.tomcat.connector.keystoreFile>
+                                        ${project.basedir}/.keystore</cargo.tomcat.connector.keystoreFile>
                                     <cargo.tomcat.connector.keystorePass>changeit</cargo.tomcat.connector.keystorePass>
                                     <cargo.tomcat.connector.keyAlias>tomcat</cargo.tomcat.connector.keyAlias>
                                     <cargo.tomcat.httpSecure>true</cargo.tomcat.httpSecure>
@@ -300,7 +318,8 @@
                                 <configuration>
                                     <target>
                                         <ant target="run" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -313,8 +332,10 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant target="databaseServer" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                        <ant target="databaseServer"
+                                            antfile="${basedir}/src/config/build.xml">
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -327,8 +348,10 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant target="databaseInit" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                        <ant target="databaseInit"
+                                            antfile="${basedir}/src/config/build.xml">
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -370,7 +393,8 @@
 
                                 <properties>
                                     <cargo.jvmargs>
-                                        ${seeker.javaagent} ${seeker.server.url} ${seeker.project.key} -Xss2m -Xmx8G
+                                        ${seeker.javaagent} ${seeker.server.url}
+                                        ${seeker.project.key} -Xss2m -Xmx8G
                                     </cargo.jvmargs>
                                     <cargo.servlet.port>8443</cargo.servlet.port>
                                     <cargo.protocol>https</cargo.protocol>
@@ -378,7 +402,8 @@
                                     <cargo.tomcat.connector.uriEncoding>ISO-8859-1</cargo.tomcat.connector.uriEncoding>
                                     <cargo.tomcat.connector.clientAuth>false</cargo.tomcat.connector.clientAuth>
                                     <cargo.tomcat.connector.sslProtocol>TLS</cargo.tomcat.connector.sslProtocol>
-                                    <cargo.tomcat.connector.keystoreFile>${project.basedir}/.keystore</cargo.tomcat.connector.keystoreFile>
+                                    <cargo.tomcat.connector.keystoreFile>
+                                        ${project.basedir}/.keystore</cargo.tomcat.connector.keystoreFile>
                                     <cargo.tomcat.connector.keystorePass>changeit</cargo.tomcat.connector.keystorePass>
                                     <cargo.tomcat.connector.keyAlias>tomcat</cargo.tomcat.connector.keyAlias>
                                     <cargo.tomcat.httpSecure>true</cargo.tomcat.httpSecure>
@@ -406,7 +431,8 @@
                                 <configuration>
                                     <target>
                                         <ant target="run" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -419,8 +445,10 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant target="databaseServer" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                        <ant target="databaseServer"
+                                            antfile="${basedir}/src/config/build.xml">
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -433,8 +461,10 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant target="databaseInit" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                        <ant target="databaseInit"
+                                            antfile="${basedir}/src/config/build.xml">
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -485,7 +515,8 @@
                                     <cargo.tomcat.connector.uriEncoding>ISO-8859-1</cargo.tomcat.connector.uriEncoding>
                                     <cargo.tomcat.connector.clientAuth>false</cargo.tomcat.connector.clientAuth>
                                     <cargo.tomcat.connector.sslProtocol>TLS</cargo.tomcat.connector.sslProtocol>
-                                    <cargo.tomcat.connector.keystoreFile>${project.basedir}/.keystore</cargo.tomcat.connector.keystoreFile>
+                                    <cargo.tomcat.connector.keystoreFile>
+                                        ${project.basedir}/.keystore</cargo.tomcat.connector.keystoreFile>
                                     <cargo.tomcat.connector.keystorePass>changeit</cargo.tomcat.connector.keystorePass>
                                     <cargo.tomcat.connector.keyAlias>tomcat</cargo.tomcat.connector.keyAlias>
                                     <cargo.tomcat.httpSecure>true</cargo.tomcat.httpSecure>
@@ -513,7 +544,8 @@
                                 <configuration>
                                     <target>
                                         <ant target="run" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -526,8 +558,10 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant target="databaseServer" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                        <ant target="databaseServer"
+                                            antfile="${basedir}/src/config/build.xml">
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -540,8 +574,10 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant target="databaseInit" antfile="${basedir}/src/config/build.xml">
-                                            <reference torefid="maven.compile.classpath" refid="maven.compile.classpath" />
+                                        <ant target="databaseInit"
+                                            antfile="${basedir}/src/config/build.xml">
+                                            <reference torefid="maven.compile.classpath"
+                                                refid="maven.compile.classpath" />
                                         </ant>
                                     </target>
                                 </configuration>
@@ -592,7 +628,8 @@
                                     <cargo.tomcat.connector.uriEncoding>ISO-8859-1</cargo.tomcat.connector.uriEncoding>
                                     <cargo.tomcat.connector.clientAuth>false</cargo.tomcat.connector.clientAuth>
                                     <cargo.tomcat.connector.sslProtocol>TLS</cargo.tomcat.connector.sslProtocol>
-                                    <cargo.tomcat.connector.keystoreFile>${project.basedir}/.keystore</cargo.tomcat.connector.keystoreFile>
+                                    <cargo.tomcat.connector.keystoreFile>
+                                        ${project.basedir}/.keystore</cargo.tomcat.connector.keystoreFile>
                                     <cargo.tomcat.connector.keystorePass>changeit</cargo.tomcat.connector.keystorePass>
                                     <cargo.tomcat.connector.keyAlias>tomcat</cargo.tomcat.connector.keyAlias>
                                     <cargo.tomcat.httpSecure>true</cargo.tomcat.httpSecure>
@@ -614,7 +651,8 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- mvn dependency:analyze says this is an unused declared dependency, but its wrong. I think the webapp needs it somehow. -->
+        <!-- mvn dependency:analyze says this is an unused declared dependency, but its wrong. I
+        think the webapp needs it somehow. -->
         <dependency>
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-servlet</artifactId>
@@ -627,7 +665,12 @@
             <version>1.16.0</version>
         </dependency>
 
-        <!-- mvn dependency:analyze says this is an unused declared dependency, but its wrong. Get this runtime error if it's not included: Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [org.apache.commons.dbcp.BasicDataSource] for bean with name 'dataSource' defined in class path resource [context.xml]; nested exception is java.lang.ClassNotFoundException: org.apache.commons.dbcp.BasicDataSource -->
+        <!-- mvn dependency:analyze says this is an unused declared dependency, but its wrong. Get
+        this runtime error if it's not included: Caused by:
+        org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class
+        [org.apache.commons.dbcp.BasicDataSource] for bean with name 'dataSource' defined in class
+        path resource [context.xml]; nested exception is java.lang.ClassNotFoundException:
+        org.apache.commons.dbcp.BasicDataSource -->
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
@@ -640,8 +683,10 @@
             <version>2.6</version>
         </dependency>
 
-        <!-- Including slf4j lib to avoid warning: SLF4J: Defaulting to no-operation (NOP) logger implementation -->
-        <!-- Have to include early in the pom like this so this version takes precendence over the old version used by the apacheds libs. -->
+        <!-- Including slf4j lib to avoid warning: SLF4J: Defaulting to no-operation (NOP) logger
+        implementation -->
+        <!-- Have to include early in the pom like this so this version takes precendence over the
+        old version used by the apacheds libs. -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-reload4j</artifactId>
@@ -651,10 +696,21 @@
         <dependency>
             <groupId>org.apache.directory.server</groupId>
             <artifactId>apacheds-core</artifactId>
-            <!-- Upgrading to 2.0.0-M24 is an API breaking change. But it might be needed for Java 10, because I get this error, that I don't get with Java 8: [java] at org.apache.directory.server.core.DefaultDirectoryService.initialize(DefaultDirectoryService.java:1426) [java] at org.apache.directory.server.core.DefaultDirectoryService.startup(DefaultDirectoryService.java:907) [java] at org.owasp.benchmark.helpers.LDAPServer.initDirectoryService(LDAPServer.java:148) [java] at org.owasp.benchmark.helpers.LDAPServer.<init>(LDAPServer.java:42) [java] at org.owasp.benchmark.helpers.LDAPServer.main(LDAPServer.java:320) [java] Caused by: java.lang.NumberFormatException: multiple points [java] at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1914) -->
+            <!-- Upgrading to 2.0.0-M24 is an API breaking change. But it might be needed for Java
+            10, because I get this error, that I don't get with Java 8: [java] at
+            org.apache.directory.server.core.DefaultDirectoryService.initialize(DefaultDirectoryService.java:1426)
+            [java] at
+            org.apache.directory.server.core.DefaultDirectoryService.startup(DefaultDirectoryService.java:907)
+            [java] at
+            org.owasp.benchmark.helpers.LDAPServer.initDirectoryService(LDAPServer.java:148) [java]
+            at org.owasp.benchmark.helpers.LDAPServer.<init>(LDAPServer.java:42) [java] at
+            org.owasp.benchmark.helpers.LDAPServer.main(LDAPServer.java:320) [java] Caused by:
+            java.lang.NumberFormatException: multiple points [java] at
+            java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1914) -->
             <version>${version.apacheds}</version>
             <exclusions>
-                <!-- Excluded because its old, and there is a bug in it causing an exception when using it. -->
+                <!-- Excluded because its old, and there is a bug in it causing an exception when
+                using it. -->
                 <exclusion>
                     <groupId>bouncycastle</groupId>
                     <artifactId>bcprov-jdk15</artifactId>
@@ -784,7 +840,8 @@
             <version>${version.hibernate}</version>
         </dependency>
 
-        <!-- mvn dependency:analyze says this is an unused declared dependency, but its wrong. Get a runtime error if it's not included -->
+        <!-- mvn dependency:analyze says this is an unused declared dependency, but its wrong. Get a
+        runtime error if it's not included -->
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
@@ -822,7 +879,8 @@
             <version>${version.springframework}</version>
         </dependency>
 
-        <!-- mvn dependency:analyze says this is an unused declared dependency, but its wrong. It's needed by Spring somehow. -->
+        <!-- mvn dependency:analyze says this is an unused declared dependency, but its wrong. It's
+        needed by Spring somehow. -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -832,7 +890,8 @@
         <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
-            <!-- version 2.0.2 of this library is actually 1.0.b2, per the message: [WARNING] The artifact xml-apis:xml-apis:jar:2.0.2 has been relocated to xml-apis:xml-apis:jar:1.0.b2 -->
+            <!-- version 2.0.2 of this library is actually 1.0.b2, per the message: [WARNING] The
+            artifact xml-apis:xml-apis:jar:2.0.2 has been relocated to xml-apis:xml-apis:jar:1.0.b2 -->
             <version>1.4.01</version>
         </dependency>
 
@@ -962,7 +1021,8 @@
                 </executions>
             </plugin>
 
-            <!-- used by some of the scripts. This forces the plugin to be downloaded, so it doesn't need to when the script runs. -->
+            <!-- used by some of the scripts. This forces the plugin to be downloaded, so it doesn't
+            need to when the script runs. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-help-plugin</artifactId>
@@ -1000,12 +1060,15 @@
             </plugin>
 
             <plugin>
-                <!-- Note: This uses the maven-fluido-skin version specified next. The skin is referenced in src/site/site.xml. -->
+                <!-- Note: This uses the maven-fluido-skin version specified next. The skin is
+                referenced in src/site/site.xml. -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>4.0.0-M11</version>
                 <dependencies>
-                    <!-- Explicitly declare these dependencies so the versions plugin and library bots will flag available updates. The fluido-skin plugin is referenced in src/site/site.xml using the same fluido version property. -->
+                    <!-- Explicitly declare these dependencies so the versions plugin and library
+                    bots will flag available updates. The fluido-skin plugin is referenced in
+                    src/site/site.xml using the same fluido version property. -->
                     <dependency>
                         <groupId>org.apache.maven.skins</groupId>
                         <artifactId>maven-fluido-skin</artifactId>
@@ -1052,7 +1115,9 @@
                     <failOnError>true</failOnError>
                 </configuration>
                 <dependencies>
-                    <!-- Overwrite dependency on SpotBugs if you want to specify the version of SpotBugs. SpotBugs itself is frequently several versions ahead of the spotbugs-maven-plugin -->
+                    <!-- Overwrite dependency on SpotBugs if you want to specify the version of
+                    SpotBugs. SpotBugs itself is frequently several versions ahead of the
+                    spotbugs-maven-plugin -->
                     <dependency>
                         <groupId>com.github.spotbugs</groupId>
                         <artifactId>spotbugs</artifactId>
@@ -1064,7 +1129,9 @@
             <plugin>
                 <groupId>com.h3xstream.findsecbugs</groupId>
                 <artifactId>findsecbugs-plugin</artifactId>
-                <!-- You MUST update the plugin version used in findsecbugs profile, so these versions match. You can't define/use a versions.findsecbugs property because it breaks the naming of the findsecbugs results file. -->
+                <!-- You MUST update the plugin version used in findsecbugs profile, so these
+                versions match. You can't define/use a versions.findsecbugs property because it
+                breaks the naming of the findsecbugs results file. -->
                 <version>1.12.0</version>
             </plugin>
 
@@ -1086,7 +1153,8 @@
                 <!-- This is the last version that supports Java 8. 2.31.0+ requires Java 11. -->
                 <version>2.30.0</version>
                 <configuration>
-                    <!-- optional: limit format enforcement to just the files changed by this feature branch -->
+                    <!-- optional: limit format enforcement to just the files changed by this
+                    feature branch -->
                     <ratchetFrom>origin/master</ratchetFrom>
                     <formats>
                         <!-- you can define as many formats as you want, each is independent -->
@@ -1210,7 +1278,8 @@
         <project.java.target>1.8</project.java.target>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.war.webxml>${basedir}/src/config/web.xml</maven.war.webxml>
-        <!-- runenv defaults to local here. But scripts can set this to 'remote' to launch remotely accessible Benchmark. e.g., mvn clean package cargo:run -Pdeploy1.2 -Drunenv=remote -->
+        <!-- runenv defaults to local here. But scripts can set this to 'remote' to launch remotely
+        accessible Benchmark. e.g., mvn clean package cargo:run -Pdeploy1.2 -Drunenv=remote -->
         <runenv>local</runenv>
         <tomcat.jvmargs>
             -Xms1G
@@ -1228,16 +1297,19 @@
         <version.apache-shared-ldap>0.9.19</version.apache-shared-ldap>
         <version.exec.maven>1.6.0</version.exec.maven>
         <version.fluido>2.0.0-M8</version.fluido>
-        <!-- hibernate is up to rev 6+. But 4.0.0. causes this error: symbol: org.hibernate.classic.Session not found -->
+        <!-- hibernate is up to rev 6+. But 4.0.0. causes this error: symbol:
+        org.hibernate.classic.Session not found -->
         <version.hibernate>3.6.10.Final</version.hibernate>
         <version.spotbugs.maven>4.7.3.6</version.spotbugs.maven>
         <version.spotbugs>4.8.0</version.spotbugs>
         <!-- Spring 6.x requires Java 17 -->
         <version.springframework>5.3.30</version.springframework>
-        <!-- Tomcat 10 moves from Java EE to Jakarta EE, moving packages javax.* to jakarta.* - code changes likely required to address this change. -->
+        <!-- Tomcat 10 moves from Java EE to Jakarta EE, moving packages javax.* to jakarta.* - code
+        changes likely required to address this change. -->
         <tomcat.major.version>9</tomcat.major.version>
         <version.tomcat>9.0.82</version.tomcat>
-        <tomcat.url>https://archive.apache.org/dist/tomcat/tomcat-${tomcat.major.version}/v${version.tomcat}/bin/apache-tomcat-${version.tomcat}.zip</tomcat.url>
+        <tomcat.url>
+            https://archive.apache.org/dist/tomcat/tomcat-${tomcat.major.version}/v${version.tomcat}/bin/apache-tomcat-${version.tomcat}.zip</tomcat.url>
     </properties>
 
 </project>
