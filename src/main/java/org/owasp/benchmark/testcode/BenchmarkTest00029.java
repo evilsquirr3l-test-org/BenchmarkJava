@@ -42,6 +42,7 @@ public class BenchmarkTest00029 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         java.util.Map<String, String[]> map = request.getParameterMap();
+        java.util.Map<String, String[]> map1 = request.getParameterMap();
         String param = "";
         if (!map.isEmpty()) {
             String[] values = map.get("BenchmarkTest00029");
