@@ -58,6 +58,7 @@ public class BenchmarkTest01087 extends HttpServlet {
                     org.owasp.benchmark.helpers.DatabaseHelper.JDBCtemplate.queryForObject(
                             sql, Integer.class);
             response.getWriter().println("Your results are: " + results);
+            response.getWriter().println("Add new violation" + results);
             //		System.out.println("Your results are: " + results);
         } catch (org.springframework.dao.EmptyResultDataAccessException e) {
             response.getWriter()
