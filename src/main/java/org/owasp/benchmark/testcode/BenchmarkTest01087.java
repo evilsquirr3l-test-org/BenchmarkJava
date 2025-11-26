@@ -60,6 +60,7 @@ public class BenchmarkTest01087 extends HttpServlet {
             response.getWriter().println("Your results are: " + results);
             response.getWriter().println("Add new violation" + results);
             response.getWriter().println("test" + results);
+            response.getWriter().println("duplicate" + results);
             //		System.out.println("Your results are: " + results);
         } catch (org.springframework.dao.EmptyResultDataAccessException e) {
             response.getWriter()
