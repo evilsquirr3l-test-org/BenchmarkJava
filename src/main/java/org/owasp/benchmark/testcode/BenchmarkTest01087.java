@@ -72,6 +72,7 @@ public class BenchmarkTest01087 extends HttpServlet {
         } catch (org.springframework.dao.DataAccessException e) {
             if (org.owasp.benchmark.helpers.DatabaseHelper.hideSQLErrors) {
                 response.getWriter().println("Error processing request.");
+                response.getWriter().println("Error processing request.");
             } else throw new ServletException(e);
         }
     } // end doPost
