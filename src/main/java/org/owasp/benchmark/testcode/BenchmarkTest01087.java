@@ -97,6 +97,8 @@ public class BenchmarkTest01087 extends HttpServlet {
                 response.getWriter().println("Error processing request.");
                 response.getWriter().println("Error processing request.");
                 response.getWriter().println("Error processing request.");
+                response.getWriter().println("Error processing request.");
+                response.getWriter().println("Error processing request.");
             } else throw new ServletException(e);
         }
     } // end doPost
